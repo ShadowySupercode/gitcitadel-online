@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-  <title>GitWorkshop - About</title>
+  <title>GitCitadel - About</title>
 </svelte:head>
 
 <!--
@@ -20,7 +20,7 @@
   <div class="prose m-auto mt-8">
     <h2 class="">About</h2>
     <p>
-      gitworkshop.dev, <a href="/ngit">ngit</a> and git-remote-nostr are tools
+      gitcitadel.eu, <a href="/ngit">ngit</a> and git-remote-nostr are tools
       to enable code collaboration over nostr created and maintained by
       <a
         class="link-primary"
@@ -52,7 +52,7 @@
           <a
             class="link-secondary"
             href="/r/naddr1qq9kw6t5wahhy6mndphhqqgkwaehxw309aex2mrp0yhxummnw3ezucnpdejqyg9qpr00z4uklw56p4h6kp8gl4ts3y59m874qhd94ql732k40g6kf5psgqqqw7vs2nfsd9"
-            >gitworkshop.dev issue</a
+            >gitcitadel.eu issue</a
           >
           or directly to
           <a
@@ -114,7 +114,7 @@
 
     <p>
       there is innovation happening with git and nostr in a few places and
-      gitworkshop.dev aims to work with different approaches
+      gitcitadel.eu aims to work with different approaches
     </p>
 
     <p>ngit is more opinionated, and its philosophy can be summed up as:</p>
@@ -147,7 +147,7 @@
     </p>
 
     <p>
-      git-remote-nostr, ngit and gitworkshop.dev implements optional features of
+      git-remote-nostr, ngit and gitcitadel.eu implements optional features of
       nip34, which enable:
     </p>
     <ul>
@@ -297,7 +297,7 @@
           <a
             class="link-secondary"
             href="/r/naddr1qq9kw6t5wahhy6mndphhqqgkwaehxw309aex2mrp0yhxummnw3ezucnpdejqyg9qpr00z4uklw56p4h6kp8gl4ts3y59m874qhd94ql732k40g6kf5psgqqqw7vs2nfsd9"
-            >gitworkshop.dev issue</a
+            >gitcitadel.eu issue</a
           >
           or directly to
           <a

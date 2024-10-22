@@ -98,7 +98,7 @@
 </script>
 
 <svelte:head>
-  <title>GitWorkshop - ngit</title>
+  <title>GitCitadel - ngit</title>
 </svelte:head>
 
 {#if error && waited}

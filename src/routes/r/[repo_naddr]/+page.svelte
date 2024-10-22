@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-  <title>GitWorkshop: {$selected_repo_event.name}</title>
+  <title>GitCitadel: {$selected_repo_event.name}</title>
 </svelte:head>
 
 <RepoPageWrapper {repo_naddr} selected_tab="about" show_details_on_mobile>

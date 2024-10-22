@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-  <title>GitWorkshop - ngit</title>
+  <title>GitCitadel - ngit</title>
 </svelte:head>
 
 <Container>
@@ -28,7 +28,7 @@
             <ul>
               <li>
                 browse <a href="/repos" class="link link-primary"
-                  >gitworkshop.dev/repos</a
+                  >gitcitadel.eu/repos</a
                 > for the repository
               </li>
               <li>explore proposals and issues</li>
@@ -344,7 +344,7 @@
                 <li>
                   <div>
                     <div>
-                      use gitworkshop.dev to make comments or manually set the
+                      use gitcitadel.eu to make comments or manually set the
                       status.
                     </div>
                     <div class="not-prose text-sm">

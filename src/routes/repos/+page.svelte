@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-  <title>GitWorkshop - Repos</title>
+  <title>GitCitadel - Repos</title>
 </svelte:head>
 
 <Container>
