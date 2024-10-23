@@ -1,0 +1,50 @@
+# https://taskfile.dev
+
+#Called by the vnbuild system to produce builds for my website
+#https://www.vaughnnugent.com/resources/software
+
+#This taskfile performs the build operations for a module, it handles
+#git code updates, msbuild on solutions, and sleet NuGet feed pushes.
+
+#this file must be in the same directory as the solution file
+
+version: '3'
+
+includes:
+  ci:
+    taskfile: ci/Taskfile.yaml
+    dir: './ci'
+
+tasks:
+
+#called by build pipeline to sync repo
+  update:
+    cmds:
+     - git reset --hard
+     - git remote update
+     - git pull origin {{ .BRANCH_NAME }} --verify-signatures 
+
+  test:
+    desc: 'Builds and runs unit tests for vnbuild CI systems'
+    cmds: []
+
+#called by build pipeline to build module
+  build:
+    cmds:
+     - cmd: echo "building module {{ .MODULE_NAME }}"
+       silent: true
+     - task: ci:build
+
+  publish:
+    cmds:
+     #git archive in the module directory
+     - git archive --format {{ .ARCHIVE_FILE_FORMAT }} --output {{ .ARCHIVE_FILE_NAME }} HEAD
+
+  #called by build pipeline to clean module
+  clean:
+    cmds:
+     #clean solution
+     - cmd: '{{ if eq OS "windows" }}powershell rm -Force -Recurse{{else}}rm -rf{{end}} out/' 
+       ignore_error: true
+
+

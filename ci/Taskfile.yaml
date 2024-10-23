@@ -1,0 +1,82 @@
+# https://taskfile.dev
+
+# Called by the vnbuild system to produce builds for my website
+# https://www.vaughnnugent.com/resources/software
+
+version: "3"
+
+vars:
+  _RM: '{{ if eq OS "windows" }}powershell rm -Force{{ else }}rm -f{{ end }}'
+  _RMR: '{{ if eq OS "windows" }}powershell rm -Recurse -Force{{ else }}rm -rf{{ end }}'
+  _RMF: '{{ if eq OS "windows" }}powershell rm -Force{{ else }}rm -f{{ end }}'
+  _MKDIR: '{{ if eq OS "windows" }}powershell mkdir -Force{{ else }}mkdir -p{{ end }}'
+  _CP: '{{ if eq OS "windows" }}powershell cp -Force{{ else }}cp{{ end }}'
+  _CPR: '{{ if eq OS "windows" }}powershell cp -Recurse -Force{{ else }}cp -r{{ end }}'
+
+  BUILD_DIR: './build/app'
+  OUT_DIR: '../out'
+
+includes:
+
+  plugins:
+    taskfile: plugins.taskfile.yaml
+
+tasks:
+
+  build:
+    desc: 'Builds the entire module'
+    deps:
+      - include-files
+      - plugins:all
+      - build-frontent
+      - compile-config
+    cmds:
+    - defer: '{{ ._RMR }} build/'
+   
+     #remove runtime-shared libs before they are copied
+    - task: prune-plugin-libs
+
+    #include files in the build directory
+    - cmd: '{{ ._CPR }} build/ {{ .OUT_DIR }}'
+
+  include-files:
+    internal: true
+    cmds:
+    - cmd: '{{ ._MKDIR }} build/'
+    - cmd: '{{ ._CP }} "Dockerfile" build/'
+    - cmd: '{{ ._CP }} "docker-compose.yaml" build/'
+    - cmd: '{{ ._CP }} "container.taskfile.yaml" {{ .BUILD_DIR }}/Taskfile.yaml'
+
+  compile-config:
+    internal: true
+    cmds:
+    - cmd: '{{ ._MKDIR }} {{ .BUILD_DIR }}/config'
+    - cmd: '{{ ._CPR }} ./config {{ .BUILD_DIR }}'
+
+  build-frontent:
+    internal: true
+    cmds:
+    #build front-end
+    - cmd: 'cd ../frontend && npm install && npm run build'
+
+    #move dist files to web root
+    - cmd: '{{ ._CPR }} "../frontend/build/" "{{ .BUILD_DIR }}/root"'
+
+  postbuild_success:
+    cmds:
+    - cmd: powershell -Command "mkdir bin -Force"
+
+  prune-plugin-libs:
+    internal: true
+    cmds:
+    - for: ['vnlib.utils.dll' , 'vnlib.net.http.dll', 'VNLib.Hashing.Portable.dll', 'VNLib.Plugins.Essentials.dll', 'VNLib.Plugins.dll', 'Serilog.dll', 'Serilog.Sinks.Console.dll', 'Serilog.Sinks.File.dll']
+      cmd: cd {{ .BUILD_DIR }}/plugins && powershell 'Get-ChildItem -Path . -Recurse -File -Filter "{{.ITEM}}" | Remove-Item -Force'
+
+  clean:
+    desc: 'Cleans up the build mess and artifacts'
+    ignore_error: true
+    cmds:
+    - for: [ 'build/' ]
+      cmd: '{{ _RMF }} "{{ .ITEM }}"'
+    
+    - task: container:clean

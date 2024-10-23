@@ -1,0 +1,18 @@
+
+# https://taskfile.dev
+
+# Called by the vnbuild system to produce builds for my website
+# https://www.vaughnnugent.com/resources/software
+
+# This taskfile performs the build operations for a single project, 
+# it handles project level build logic.
+
+version: '3'
+
+tasks:
+
+  build:
+    desc: 'Builds the frontend web application'
+    cmds:
+      - cmd: npm run install
+      - cmd: npm run build

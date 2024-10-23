@@ -1,0 +1,73 @@
+{
+	"/": [
+		"src/routes/+layout.ts",
+		"src/routes/+layout.ts"
+	],
+	"/about": [
+		"src/routes/+layout.ts"
+	],
+	"/concept": [
+		"src/routes/+layout.ts"
+	],
+	"/e/[nostr_ref]": [
+		"src/routes/e/[nostr_ref]/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/ngit": [
+		"src/routes/+layout.ts"
+	],
+	"/p/[npub]": [
+		"src/routes/p/[npub]/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/quick-start": [
+		"src/routes/+layout.ts"
+	],
+	"/repos": [
+		"src/routes/+layout.ts"
+	],
+	"/repo/[repo_identifier]": [
+		"src/routes/repo/[repo_identifier]/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/repo/[repo_identifier]/issues": [
+		"src/routes/repo/[repo_identifier]/issues/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/repo/[repo_identifier]/issue/[event_id]": [
+		"src/routes/repo/[repo_identifier]/issue/[event_id]/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/repo/[repo_identifier]/proposals": [
+		"src/routes/repo/[repo_identifier]/proposals/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/repo/[repo_identifier]/proposal/[event_id]": [
+		"src/routes/repo/[repo_identifier]/proposal/[event_id]/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/r/[repo_naddr]": [
+		"src/routes/r/[repo_naddr]/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/r/[repo_naddr]/issues": [
+		"src/routes/r/[repo_naddr]/issues/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/r/[repo_naddr]/issues/new": [
+		"src/routes/r/[repo_naddr]/issues/new/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/r/[repo_naddr]/issues/[issue_nip19]": [
+		"src/routes/r/[repo_naddr]/issues/[issue_nip19]/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/r/[repo_naddr]/proposals": [
+		"src/routes/r/[repo_naddr]/proposals/+page.ts",
+		"src/routes/+layout.ts"
+	],
+	"/r/[repo_naddr]/proposals/[proposal_nip19]": [
+		"src/routes/r/[repo_naddr]/proposals/[proposal_nip19]/+page.ts",
+		"src/routes/+layout.ts"
+	]
+}
