@@ -1,0 +1,1 @@
+import{r}from"../chunks/index.De_1-CT6.js";const o=({params:e})=>{throw r(301,`/repo/${e.repo_identifier}`)},i=Object.freeze(Object.defineProperty({__proto__:null,load:o},Symbol.toStringTag,{value:"Module"}));export{i as universal};

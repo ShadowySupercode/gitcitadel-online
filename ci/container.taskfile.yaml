@@ -1,0 +1,40 @@
+# https://taskfile.dev
+
+#This taskfile must be called from the CI taskfile, as it is part of the CI 
+#project and it's pipleine. This file will also be copied to the container image
+#and used to build the native libraries for the project.
+
+version: "3"
+
+vars:
+  OUT_DIR: "{{ .USER_WORKING_DIR }}/out"
+
+tasks:
+  #called from inside the container to build native libraries
+  default:
+    deps:
+     - task: build_rpmalloc
+     - task: build_compres
+
+  build_rpmalloc:
+    internal: true
+    dir: 'lib/vnlib_rpmalloc'
+    cmds:
+      #build rpmalloc library and rewrite to a standard .dll extension
+      - cmd: task
+      - cmd: cp build/{{ OS }}/libvn_rpmalloc.so {{ .OUT_DIR }}/libvn_rpmalloc.so
+
+  build_compress:
+    internal: true
+    dir: 'lib/vnlib_compress'
+    cmds:
+      #build compression and rewrite to a standard .dll extension
+      - cmd: task
+      - cmd: cp build/{{ OS }}/libvn_compress.so {{ .OUT_DIR }}/libvn_compress.so
+
+
+  test:
+    env:
+      VNLIB_SHARED_HEAP_FILE_PATH: lib/vnlib_rpmalloc.dll
+    cmds:
+      - cmd: dotnet webserver/VNLib.Webserver.dll --config config/config.yaml {{ .CLI_ARGS }}

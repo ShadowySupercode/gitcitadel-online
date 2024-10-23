@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!--Routes container element holds a collection of route elements-->
+<routes>
+  
+  <route routine="4" privilege="0">
+
+    <!--Wildcard host-->
+    <hostname>*</hostname>
+
+    <!--All paths that start with / will be matched-->
+    <path>/</path>
+    
+    <!-- serves the 404.html as the homepage -->
+    <alternate>404.html</alternate>
+  </route>
+
+  <!-- Allow all /_app/* requets to pass through to the filesystem -->
+  <route routine="1" privilege="0">
+    
+    <!--Wildcard host-->
+    <hostname>*</hostname>
+    
+    <!--All paths that start with /assets/ will be matched-->
+    <path>/_app/*</path>
+  </route>
+  
+  <!--Overwrite all other requests to the index file (catch all) using the ServeOther routine (4)-->
+  <route routine="4" privilege="0">
+    
+    <!--Wildcard hostname-->
+    <hostname>*</hostname>
+    
+    <!--Declares that all files after / will be matched by this rule-->
+    <path>/*</path>
+    
+    <!--Return to the root path, lets the file processor handle extension searching-->
+    <alternate>404.html</alternate>
+  </route>
+  
+  <!--All routes that do not match will be allowed, this is only / since it does not have a matching rule-->
+  
+</routes>

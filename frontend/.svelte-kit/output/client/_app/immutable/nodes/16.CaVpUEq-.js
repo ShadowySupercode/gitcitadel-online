@@ -1,0 +1,1 @@
+import{r as o}from"../chunks/index.De_1-CT6.js";const r=({params:e})=>{throw o(301,`/e/${e.event_id}`)},a=Object.freeze(Object.defineProperty({__proto__:null,load:r},Symbol.toStringTag,{value:"Module"}));export{a as universal};

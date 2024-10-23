@@ -1,0 +1,90 @@
+# https://taskfile.dev
+
+#Called by the vnbuild system to produce builds for my website
+#https://www.vaughnnugent.com/resources/software
+
+version: "3"
+
+includes:
+  install:
+    taskfile: install.taskfile.yaml
+
+vars:
+  BUILDS_URL: https://www.vaughnnugent.com/public/resources/software/builds
+  CORE_VERSION: '9eb7c86aa9882ca98a0be5965d6547c9db5be2ca'
+  ESSENTIALS_VERSION: '451091e93b5feee7a5e01d3a81f5d63efa7ea8be'
+
+tasks:
+
+  all:
+    deps:
+    - install-rpmalloc
+    - install-compressor-lib
+    - install-compression
+    - install-router
+    - install-webserver
+    cmds:
+    - cmd: echo "Plugins installed successfully"
+      silent: true
+
+  install-webserver:
+    cmds:
+    - cmd : powershell -Command "mkdir webserver -Force"
+      ignore_error: true
+    
+    #clone the webserver (it's cross platform when using dotnet command so just grab the linux version)
+    - task: install:install
+      vars:
+        PROJECT_NAME: 'VNLib.Webserver'
+        MODULE_NAME: "VNLib.Core"
+        FILE_NAME: "linux-x64-release.tgz"
+        DIR: '{{ .BUILD_DIR }}/webserver'
+        VERSION: '{{ .CORE_VERSION }}'
+
+    #remove the executable since its not needed
+    - cmd: cd {{ .BUILD_DIR }}/webserver && {{ ._RM }} "VNlib.WebServer"
+
+  install-router:
+    cmds:
+    #install router plugin
+    - task: install:install
+      vars:
+        PROJECT_NAME: 'VNLib.Plugins.Essentials.Content.Routing'
+        MODULE_NAME: "Plugins.Essentials"
+        FILE_NAME: "release.tgz"
+        DIR: '{{ .BUILD_DIR }}/plugins/PageRouter'
+        VERSION: '{{ .ESSENTIALS_VERSION }}'
+
+  install-compression:
+    cmds:
+    #install compression plugin
+    - task: install:install
+      vars:
+        PROJECT_NAME: 'VNLib.Net.Compression'
+        MODULE_NAME: "VNLib.Core"
+        FILE_NAME: "release.tgz"
+        DIR: '{{ .BUILD_DIR }}/lib/vnlib.net.compression'
+        VERSION: '{{ .CORE_VERSION }}'
+
+  install-compressor-lib:
+    cmds:
+
+    #install compressor source code
+    - task: install:install
+      vars:
+        PROJECT_NAME: 'vnlib_compress'
+        MODULE_NAME: "VNLib.Core"
+        FILE_NAME: "src.tgz"
+        DIR: '{{ .BUILD_DIR }}/lib/vnlib_compress'
+        VERSION: '{{ .CORE_VERSION }}'
+
+  install-rpmalloc:
+    cmds:
+    #install the rpmalloc source code package for Linux
+    - task: install:install
+      vars:
+        PROJECT_NAME: 'vnlib_rpmalloc'
+        MODULE_NAME: "VNLib.Core"
+        FILE_NAME: "src.tgz"
+        DIR: '{{ .BUILD_DIR }}/lib/vnlib_rpmalloc'
+        VERSION: '{{ .CORE_VERSION }}'

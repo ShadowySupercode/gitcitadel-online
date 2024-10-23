@@ -1,0 +1,46 @@
+version: 36
+jobs:
+- name: Git mirror push
+  steps:
+  - !PushRepository
+    name: Github push sync
+    remoteUrl: https://github.com/VnUgE/gitcitadel-online.git
+    userName: VnUgE
+    passwordSecret: github-access-token
+    force: true
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  triggers:
+  - !TagCreateTrigger
+    projects: gitcitadel-online
+  - !BranchUpdateTrigger
+    projects: gitcitadel-online
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  timeout: 3600
+  
+- name: Test build
+  steps:
+  - !CheckoutStep
+    name: checkout
+    cloneCredential: !DefaultCredential {}
+    withLfs: false
+    withSubmodules: false
+    checkoutPath: '@project_name@'
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  - !CommandStep
+    name: Task test build
+    runInContainer: false
+    interpreter: !DefaultInterpreter
+      commands: |
+        cd @project_name@ && \
+        task -t module.taskfile.yaml build
+    useTTY: true
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  triggers:
+  - !BranchUpdateTrigger
+    branches: -master
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  timeout: 14400

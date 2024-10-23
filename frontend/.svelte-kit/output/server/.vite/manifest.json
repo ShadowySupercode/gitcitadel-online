@@ -1,0 +1,496 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "name": "internal",
+    "src": ".svelte-kit/generated/server/internal.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js"
+    ]
+  },
+  "_AlertError.js": {
+    "file": "chunks/AlertError.js",
+    "name": "AlertError",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_Container.js": {
+    "file": "chunks/Container.js",
+    "name": "Container",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_InstallNgit.js": {
+    "file": "chunks/InstallNgit.js",
+    "name": "InstallNgit",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_Issue.js": {
+    "file": "chunks/Issue.js",
+    "name": "Issue",
+    "imports": [
+      "_index2.js",
+      "_type.js",
+      "_type2.js"
+    ]
+  },
+  "_ProposalDetails.js": {
+    "file": "chunks/ProposalDetails.js",
+    "name": "ProposalDetails",
+    "imports": [
+      "_ssr.js",
+      "_UserHeader.js",
+      "_type.js",
+      "_Issue.js",
+      "_Container.js"
+    ]
+  },
+  "_ProposalsList.js": {
+    "file": "chunks/ProposalsList.js",
+    "name": "ProposalsList",
+    "imports": [
+      "_ssr.js",
+      "_type.js",
+      "_UserHeader.js"
+    ]
+  },
+  "_RepoHeader.js": {
+    "file": "chunks/RepoHeader.js",
+    "name": "RepoHeader",
+    "imports": [
+      "_ssr.js",
+      "_UserHeader.js",
+      "_InstallNgit.js",
+      "_type.js",
+      "_index2.js",
+      "_type2.js",
+      "_Container.js"
+    ]
+  },
+  "_RepoPageWrapper.js": {
+    "file": "chunks/RepoPageWrapper.js",
+    "name": "RepoPageWrapper",
+    "imports": [
+      "_ssr.js",
+      "_RepoHeader.js",
+      "_type.js",
+      "_Container.js",
+      "_UserHeader.js",
+      "_AlertError.js"
+    ]
+  },
+  "_ReposSummaryList.js": {
+    "file": "chunks/ReposSummaryList.js",
+    "name": "ReposSummaryList",
+    "imports": [
+      "_ssr.js",
+      "_type.js",
+      "_UserHeader.js"
+    ],
+    "css": [
+      "_app/immutable/assets/ReposSummaryList.DGZAYqzJ.css"
+    ]
+  },
+  "_SvelteMarkdown.js": {
+    "file": "chunks/SvelteMarkdown.js",
+    "name": "SvelteMarkdown",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_UserHeader.js": {
+    "file": "chunks/UserHeader.js",
+    "name": "UserHeader",
+    "imports": [
+      "_ssr.js",
+      "_type.js",
+      "_index2.js",
+      "_client.js"
+    ],
+    "css": [
+      "_app/immutable/assets/UserHeader.wercszHl.css"
+    ]
+  },
+  "_client.js": {
+    "file": "chunks/client.js",
+    "name": "client",
+    "imports": [
+      "_exports.js"
+    ]
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js",
+    "name": "exports"
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "name": "index"
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js",
+    "name": "index",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "name": "internal",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_ssr.js": {
+    "file": "chunks/ssr.js",
+    "name": "ssr"
+  },
+  "_type.js": {
+    "file": "chunks/type.js",
+    "name": "type",
+    "imports": [
+      "_index2.js",
+      "_ssr.js"
+    ]
+  },
+  "_type2.js": {
+    "file": "chunks/type2.js",
+    "name": "type",
+    "imports": [
+      "_type.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/svelte-4/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "name": "entries/fallbacks/error.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-4/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_client.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "name": "index",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js",
+      "_index.js",
+      "_exports.js",
+      "_index2.js"
+    ]
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "name": "entries/pages/_layout.svelte",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_UserHeader.js",
+      "_Container.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.xZFvorag.css"
+    ]
+  },
+  "src/routes/+layout.ts": {
+    "file": "entries/pages/_layout.ts.js",
+    "name": "entries/pages/_layout.ts",
+    "src": "src/routes/+layout.ts",
+    "isEntry": true
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "name": "entries/pages/_page.svelte",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_Container.js",
+      "_InstallNgit.js",
+      "_ReposSummaryList.js",
+      "_ProposalsList.js",
+      "_type.js",
+      "_UserHeader.js",
+      "_index2.js"
+    ]
+  },
+  "src/routes/about/+page.svelte": {
+    "file": "entries/pages/about/_page.svelte.js",
+    "name": "entries/pages/about/_page.svelte",
+    "src": "src/routes/about/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_Container.js"
+    ]
+  },
+  "src/routes/concept/+page.svelte": {
+    "file": "entries/pages/concept/_page.svelte.js",
+    "name": "entries/pages/concept/_page.svelte",
+    "src": "src/routes/concept/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_Container.js",
+      "_SvelteMarkdown.js"
+    ]
+  },
+  "src/routes/e/[nostr_ref]/+page.svelte": {
+    "file": "entries/pages/e/_nostr_ref_/_page.svelte.js",
+    "name": "entries/pages/e/_nostr_ref_/_page.svelte",
+    "src": "src/routes/e/[nostr_ref]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_Container.js",
+      "_client.js",
+      "_type.js",
+      "_Issue.js",
+      "_AlertError.js"
+    ]
+  },
+  "src/routes/e/[nostr_ref]/+page.ts": {
+    "file": "entries/pages/e/_nostr_ref_/_page.ts.js",
+    "name": "entries/pages/e/_nostr_ref_/_page.ts",
+    "src": "src/routes/e/[nostr_ref]/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/ngit/+page.svelte": {
+    "file": "entries/pages/ngit/_page.svelte.js",
+    "name": "entries/pages/ngit/_page.svelte",
+    "src": "src/routes/ngit/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_Container.js",
+      "_InstallNgit.js"
+    ]
+  },
+  "src/routes/p/[npub]/+page.svelte": {
+    "file": "entries/pages/p/_npub_/_page.svelte.js",
+    "name": "entries/pages/p/_npub_/_page.svelte",
+    "src": "src/routes/p/[npub]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_Container.js",
+      "_ReposSummaryList.js",
+      "_UserHeader.js",
+      "_index2.js",
+      "_type.js",
+      "_AlertError.js"
+    ]
+  },
+  "src/routes/p/[npub]/+page.ts": {
+    "file": "entries/pages/p/_npub_/_page.ts.js",
+    "name": "entries/pages/p/_npub_/_page.ts",
+    "src": "src/routes/p/[npub]/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/quick-start/+page.svelte": {
+    "file": "entries/pages/quick-start/_page.svelte.js",
+    "name": "entries/pages/quick-start/_page.svelte",
+    "src": "src/routes/quick-start/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_Container.js",
+      "_InstallNgit.js"
+    ]
+  },
+  "src/routes/r/[repo_naddr]/+page.svelte": {
+    "file": "entries/pages/r/_repo_naddr_/_page.svelte.js",
+    "name": "entries/pages/r/_repo_naddr_/_page.svelte",
+    "src": "src/routes/r/[repo_naddr]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_type.js",
+      "_SvelteMarkdown.js",
+      "_RepoPageWrapper.js",
+      "_client.js"
+    ]
+  },
+  "src/routes/r/[repo_naddr]/+page.ts": {
+    "file": "entries/pages/r/_repo_naddr_/_page.ts.js",
+    "name": "entries/pages/r/_repo_naddr_/_page.ts",
+    "src": "src/routes/r/[repo_naddr]/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/r/[repo_naddr]/issues/+page.svelte": {
+    "file": "entries/pages/r/_repo_naddr_/issues/_page.svelte.js",
+    "name": "entries/pages/r/_repo_naddr_/issues/_page.svelte",
+    "src": "src/routes/r/[repo_naddr]/issues/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_ProposalsList.js",
+      "_type.js",
+      "_RepoHeader.js",
+      "_RepoPageWrapper.js"
+    ]
+  },
+  "src/routes/r/[repo_naddr]/issues/+page.ts": {
+    "file": "entries/pages/r/_repo_naddr_/issues/_page.ts.js",
+    "name": "entries/pages/r/_repo_naddr_/issues/_page.ts",
+    "src": "src/routes/r/[repo_naddr]/issues/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/r/[repo_naddr]/issues/[issue_nip19]/+page.svelte": {
+    "file": "entries/pages/r/_repo_naddr_/issues/_issue_nip19_/_page.svelte.js",
+    "name": "entries/pages/r/_repo_naddr_/issues/_issue_nip19_/_page.svelte",
+    "src": "src/routes/r/[repo_naddr]/issues/[issue_nip19]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_Issue.js",
+      "_ProposalDetails.js",
+      "_Container.js",
+      "_RepoPageWrapper.js",
+      "_type.js",
+      "_AlertError.js"
+    ]
+  },
+  "src/routes/r/[repo_naddr]/issues/[issue_nip19]/+page.ts": {
+    "file": "entries/pages/r/_repo_naddr_/issues/_issue_nip19_/_page.ts.js",
+    "name": "entries/pages/r/_repo_naddr_/issues/_issue_nip19_/_page.ts",
+    "src": "src/routes/r/[repo_naddr]/issues/[issue_nip19]/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/r/[repo_naddr]/issues/new/+page.svelte": {
+    "file": "entries/pages/r/_repo_naddr_/issues/new/_page.svelte.js",
+    "name": "entries/pages/r/_repo_naddr_/issues/new/_page.svelte",
+    "src": "src/routes/r/[repo_naddr]/issues/new/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_RepoHeader.js",
+      "_type.js",
+      "_Container.js",
+      "_UserHeader.js",
+      "_client.js",
+      "_AlertError.js"
+    ]
+  },
+  "src/routes/r/[repo_naddr]/issues/new/+page.ts": {
+    "file": "entries/pages/r/_repo_naddr_/issues/new/_page.ts.js",
+    "name": "entries/pages/r/_repo_naddr_/issues/new/_page.ts",
+    "src": "src/routes/r/[repo_naddr]/issues/new/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/r/[repo_naddr]/proposals/+page.svelte": {
+    "file": "entries/pages/r/_repo_naddr_/proposals/_page.svelte.js",
+    "name": "entries/pages/r/_repo_naddr_/proposals/_page.svelte",
+    "src": "src/routes/r/[repo_naddr]/proposals/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_ProposalsList.js",
+      "_type.js",
+      "_UserHeader.js",
+      "_RepoPageWrapper.js"
+    ]
+  },
+  "src/routes/r/[repo_naddr]/proposals/+page.ts": {
+    "file": "entries/pages/r/_repo_naddr_/proposals/_page.ts.js",
+    "name": "entries/pages/r/_repo_naddr_/proposals/_page.ts",
+    "src": "src/routes/r/[repo_naddr]/proposals/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/r/[repo_naddr]/proposals/[proposal_nip19]/+page.svelte": {
+    "file": "entries/pages/r/_repo_naddr_/proposals/_proposal_nip19_/_page.svelte.js",
+    "name": "entries/pages/r/_repo_naddr_/proposals/_proposal_nip19_/_page.svelte",
+    "src": "src/routes/r/[repo_naddr]/proposals/[proposal_nip19]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_Issue.js",
+      "_ProposalDetails.js",
+      "_Container.js",
+      "_RepoPageWrapper.js",
+      "_type.js",
+      "_AlertError.js"
+    ]
+  },
+  "src/routes/r/[repo_naddr]/proposals/[proposal_nip19]/+page.ts": {
+    "file": "entries/pages/r/_repo_naddr_/proposals/_proposal_nip19_/_page.ts.js",
+    "name": "entries/pages/r/_repo_naddr_/proposals/_proposal_nip19_/_page.ts",
+    "src": "src/routes/r/[repo_naddr]/proposals/[proposal_nip19]/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/repo/[repo_identifier]/+page.svelte": {
+    "file": "entries/pages/repo/_repo_identifier_/_page.svelte.js",
+    "name": "entries/pages/repo/_repo_identifier_/_page.svelte",
+    "src": "src/routes/repo/[repo_identifier]/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_Container.js",
+      "_ReposSummaryList.js",
+      "_index2.js",
+      "_type.js"
+    ]
+  },
+  "src/routes/repo/[repo_identifier]/+page.ts": {
+    "file": "entries/pages/repo/_repo_identifier_/_page.ts.js",
+    "name": "entries/pages/repo/_repo_identifier_/_page.ts",
+    "src": "src/routes/repo/[repo_identifier]/+page.ts",
+    "isEntry": true
+  },
+  "src/routes/repo/[repo_identifier]/issue/[event_id]/+page.ts": {
+    "file": "entries/pages/repo/_repo_identifier_/issue/_event_id_/_page.ts.js",
+    "name": "entries/pages/repo/_repo_identifier_/issue/_event_id_/_page.ts",
+    "src": "src/routes/repo/[repo_identifier]/issue/[event_id]/+page.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/repo/[repo_identifier]/issues/+page.ts": {
+    "file": "entries/pages/repo/_repo_identifier_/issues/_page.ts.js",
+    "name": "entries/pages/repo/_repo_identifier_/issues/_page.ts",
+    "src": "src/routes/repo/[repo_identifier]/issues/+page.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/repo/[repo_identifier]/proposal/[event_id]/+page.ts": {
+    "file": "entries/pages/repo/_repo_identifier_/proposal/_event_id_/_page.ts.js",
+    "name": "entries/pages/repo/_repo_identifier_/proposal/_event_id_/_page.ts",
+    "src": "src/routes/repo/[repo_identifier]/proposal/[event_id]/+page.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/repo/[repo_identifier]/proposals/+page.ts": {
+    "file": "entries/pages/repo/_repo_identifier_/proposals/_page.ts.js",
+    "name": "entries/pages/repo/_repo_identifier_/proposals/_page.ts",
+    "src": "src/routes/repo/[repo_identifier]/proposals/+page.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/repos/+page.svelte": {
+    "file": "entries/pages/repos/_page.svelte.js",
+    "name": "entries/pages/repos/_page.svelte",
+    "src": "src/routes/repos/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js",
+      "_Container.js",
+      "_ReposSummaryList.js",
+      "_type.js",
+      "_index2.js"
+    ]
+  }
+}

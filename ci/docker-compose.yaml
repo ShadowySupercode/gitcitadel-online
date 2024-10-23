@@ -1,0 +1,15 @@
+#Copyright (c) Vaughn Nugent
+
+version: '3.6'
+
+services:
+  gc-online:
+    build:        #builds in the current directory
+      context: .
+
+    image: gitcitadel/gitcitadel-online
+    container_name: gc-online
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    command: [ "--verbose", "--inline-scheduler" ]
