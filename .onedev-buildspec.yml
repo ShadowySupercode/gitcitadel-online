@@ -18,7 +18,7 @@ jobs:
   maxRetries: 3
   retryDelay: 30
   timeout: 3600
-  
+
 - name: Test build
   steps:
   - !CheckoutStep
@@ -33,8 +33,7 @@ jobs:
     runInContainer: false
     interpreter: !DefaultInterpreter
       commands: |
-        cd @project_name@ && \
-        task -t module.taskfile.yaml build
+        cd @project_name@ && task -t module.taskfile.yaml build
     useTTY: true
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   triggers:
