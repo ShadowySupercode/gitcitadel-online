@@ -50,7 +50,7 @@ const base: RepoEventWithMaintainersMetadata = {
   loading: false,
   event_id: '',
   naddr: '',
-  web: ['https://gitworkshop.dev/repo/example', 'https://example.com'],
+  web: ['https://gitcitadel.eu/repo/example', 'https://example.com'],
   referenced_by: [],
   most_recent_reference_timestamp: 0,
   created_at: 0,

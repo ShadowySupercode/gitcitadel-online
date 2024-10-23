@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-  <title>GitWorkshop - ngit</title>
+  <title>GitCitadel - ngit</title>
 </svelte:head>
 
 <Container>
@@ -13,8 +13,8 @@
     <p>a command-line tool to send and review patches via nostr</p>
     <ul>
       <li>
-        works seemlessly with <a href="https://gitworkshop.dev"
-          >gitworkshop.dev
+        works seemlessly with <a href="https://gitcitadel.eu"
+          >gitcitadel.eu
         </a>
       </li>
       <li>fully compatable with nip34</li>
@@ -23,7 +23,7 @@
         optional nip34
       </li>
     </ul>
-    <p>ngit and gitworkshop.dev are new, experimental and in an alpha state.</p>
+    <p>ngit and gitcitadel.eu are new, experimental and in an alpha state.</p>
 
     <div role="alert" class="alert my-3">
       <!-- licence MIT https://icon-sets.iconify.design/ph/hands-praying-fill/ -->
@@ -49,7 +49,7 @@
           <a
             class="link-secondary"
             href="/r/naddr1qq9kw6t5wahhy6mndphhqqgkwaehxw309aex2mrp0yhxummnw3ezucnpdejqyg9qpr00z4uklw56p4h6kp8gl4ts3y59m874qhd94ql732k40g6kf5psgqqqw7vs2nfsd9"
-            >gitworkshop.dev issue</a
+            >gitcitadel.eu issue</a
           >
           or directly to
           <a

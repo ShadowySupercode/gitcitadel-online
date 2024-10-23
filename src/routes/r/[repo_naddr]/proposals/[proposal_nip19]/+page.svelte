@@ -56,7 +56,7 @@
 
 <svelte:head>
   <title
-    >GitWorkshop: {$selected_repo_event.name} - {$selected_proposal_full.summary
+    >GitCitadel: {$selected_repo_event.name} - {$selected_proposal_full.summary
       .title}</title
   >
 </svelte:head>

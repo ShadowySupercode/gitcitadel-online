@@ -18,9 +18,7 @@
       </div>
       <div class="navbar-center">
         <a class="align-middle text-lg" href="/">
-          <span class="text-purple-600">git</span><span class="text-white"
-            >workshop</span
-          ><span class="text-neutral">.dev</span>
+          <img src="./icons/icon-32x32.png" alt="GC icon">
         </a>
       </div>
       <div class="navbar-end gap-4">

@@ -1,11 +1,11 @@
 {
   "names": {
-    "DanConwayDev": "a008def15796fba9a0d6fab04e8fd57089285d9fd505da5a83fe8aad57a3564d",
-    "dan": "a008def15796fba9a0d6fab04e8fd57089285d9fd505da5a83fe8aad57a3564d"
+    "GitCitadel": "846ebf79a0a8813274ec9727490621ad423f16a3e474d7fd66e6a98bfe4e39a4",
+    "gc": "846ebf79a0a8813274ec9727490621ad423f16a3e474d7fd66e6a98bfe4e39a4"
   },
   "nip46": {
-    "a008def15796fba9a0d6fab04e8fd57089285d9fd505da5a83fe8aad57a3564d": [
-        "wss://relay.nsec.app"
+    "846ebf79a0a8813274ec9727490621ad423f16a3e474d7fd66e6a98bfe4e39a4": [
+        "wss://thecitadel.nostr1.com"
     ]
   }
 }
