@@ -37,7 +37,7 @@ tasks:
     - task: prune-plugin-libs
 
     #include files in the build directory
-    - cmd: '{{ ._CPR }} build/ {{ .OUT_DIR }}'
+    - cmd: '{{ ._CPR }} build {{ .OUT_DIR }}/'
 
   include-files:
     internal: true
@@ -68,8 +68,18 @@ tasks:
 
   prune-plugin-libs:
     internal: true
+    vars:
+      PRUNE_LIBS:
+        vnlib.utils.dll
+        vnlib.net.http.dll
+        VNLib.Hashing.Portable.dll
+        VNLib.Plugins.Essentials.dll
+        VNLib.Plugins.dll
+        Serilog.dll
+        Serilog.Sinks.Console.dll
+        Serilog.Sinks.File.dll 
     cmds:
-    - for: ['vnlib.utils.dll' , 'vnlib.net.http.dll', 'VNLib.Hashing.Portable.dll', 'VNLib.Plugins.Essentials.dll', 'VNLib.Plugins.dll', 'Serilog.dll', 'Serilog.Sinks.Console.dll', 'Serilog.Sinks.File.dll']
+    - for: '{{ .PRUNE_LIBS }}'
       cmd: cd {{ .BUILD_DIR }}/plugins && powershell 'Get-ChildItem -Path . -Recurse -File -Filter "{{.ITEM}}" | Remove-Item -Force'
 
   clean:
@@ -79,4 +89,3 @@ tasks:
     - for: [ 'build/' ]
       cmd: '{{ _RMF }} "{{ .ITEM }}"'
     
-    - task: container:clean

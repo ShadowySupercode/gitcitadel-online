@@ -14,7 +14,7 @@ tasks:
   default:
     deps:
      - task: build_rpmalloc
-     - task: build_compres
+     - task: build_compress
 
   build_rpmalloc:
     internal: true
@@ -32,9 +32,9 @@ tasks:
       - cmd: task
       - cmd: cp build/{{ OS }}/libvn_compress.so {{ .OUT_DIR }}/libvn_compress.so
 
-
   test:
+    desc: 'Runs the webserver locally with preconfigured settings as in the container image'
     env:
-      VNLIB_SHARED_HEAP_FILE_PATH: lib/vnlib_rpmalloc.dll
+      VNLIB_SHARED_HEAP_FILE_PATH: lib/vnlib_rpmalloc/{{ OS }}/libvn_rpmalloc.so
     cmds:
       - cmd: dotnet webserver/VNLib.Webserver.dll --config config/config.yaml {{ .CLI_ARGS }}

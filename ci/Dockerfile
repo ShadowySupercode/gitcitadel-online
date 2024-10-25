@@ -30,7 +30,7 @@ COPY app/ /app
 #pull compiled libs from build container
 COPY --from=native-cont /build/out /app/lib
 
-RUN apt update && apt install -y gettext dumb-init
+RUN apt update && apt install -y dumb-init
 
 #workdir 
 WORKDIR /app

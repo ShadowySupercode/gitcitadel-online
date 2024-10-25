@@ -29,9 +29,6 @@ tasks:
 
   install-webserver:
     cmds:
-    - cmd : powershell -Command "mkdir webserver -Force"
-      ignore_error: true
-    
     #clone the webserver (it's cross platform when using dotnet command so just grab the linux version)
     - task: install:install
       vars:

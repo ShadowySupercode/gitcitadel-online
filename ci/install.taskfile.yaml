@@ -8,7 +8,7 @@ version: "3"
 vars:
   _DELAY: '
     {{ if eq OS "windows" }}powershell "sleep -Milliseconds (Get-Random -Maximum 1000)"
-    {{ else }}sleep 0.$((RANDOM % 1000)) 
+    {{ else }}sleep 0.$((RANDOM % 1000))
     {{ end }}'
   
   _WGET: '{{ if eq OS "windows" }}powershell wget{{ else }}wget{{ end }}'
@@ -60,13 +60,8 @@ tasks:
      - cmd: cd {{ .DIR }} && powershell 'if ((Get-FileHash "{{ .FILE_NAME }}" -Algorithm SHA256).Hash -ne "{{ ._HASH }}") { exit 1 }'
        platforms: [ windows ]
      
-     - cmd: '[[ $(sha256sum path/to/file | awk "{print $1}") == "{{ ._HASH }}" ]]'
-       platforms: [ linux, darwin ]
+    # - cmd: '[[ $(sha256sum "{{ .DIR }}/{{ .FILE_NAME }}" | awk "{print $1}") == "{{ ._HASH }}" ]]'
+    #   platforms: [ linux, darwin ]
 
      - cmd: echo "Downloaded {{ .FILE_NAME }} with checksum {{ ._HASH }}"
        silent: true
-
-  random-delay:
-    internal: true
-    cmds:
-    - cmd: sleep

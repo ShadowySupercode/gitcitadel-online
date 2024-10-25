@@ -34,7 +34,7 @@ http:
     min_size: 2048
 
 vnlib.net.compression: 
-  lib_path: "lib/vnlib_compress/libvn_compress.so"
+  lib_path: "lib/libvn_compress.so"
   level: 1
 
 virtual_hosts:
