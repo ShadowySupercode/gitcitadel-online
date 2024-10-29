@@ -8,47 +8,47 @@ tcp:
   max_connections: 10000
   backlog: 100
   no_delay: true
-  
+
   #sets operating system buffer sizes
   tx_buffer: 65536
   rx_buffer: 65536
 
 http:
   default_version: "HTTP/1.1"
-  max_connections: 50000
-  max_entity_size: 0
+  max_connections: 9000
+  max_uploads_per_request: 0 # disables all uploads, will return 413 if enabled
+  max_entity_size: 0  # when set to 0 reduces buffer overhead (uploads are disabled) 
   multipart_max_buf_size: 8192
-  multipart_max_size: 0
+  multipart_max_size: 0 # disables multipart requests, will return 413 if enabled
   header_buf_size: 8128
   max_request_header_count: 50
   response_header_buf_size: 16384
-  max_uploads_per_request: 0
   keepalive_ms: 1000000
   recv_timeout_ms: 5000
   send_timeout_ms: 60000
 
   compression:
     enabled: true
-    assembly: "lib/VNLib.Net.Compression/VNLib.Net.Compression.dll"
+    assembly: "lib/vnlib.net.compression/VNLib.Net.Compression.dll"
     max_size: 512000000
     min_size: 2048
 
 vnlib.net.compression: 
-  lib_path: "lib/libvn_compress.so"
-  level: 1
+  level: 1   # fastest compression mode
+#  lib_path: '' # path to the native compression library, also set by VNLIB_COMPRESS_DLL_PATH env var
 
 virtual_hosts:
  - path: "root/"
-   
+
    hostnames: 
     - "*"   #serve all hostnames
 
-   #enables connection tracing
+   #enables connection tracing to the logger
    trace: false
 
    interfaces:
     - address: "0.0.0.0"
-      port: 80
+      port: 8080
 
       ssl: false
       certificate: ""
@@ -57,18 +57,16 @@ virtual_hosts:
       use_os_ciphers: false
 
    max_execution_time_ms: 20000
-   cache_default_sec: 864000
+  
    force_port_check: false
 
+   # a list of forbidden file extensions, will return 404 if requested 
    deny_extensions:
-    - ".php"
-    - ".json"
-    - ".htaccess"
     - ".env"
     
-   default_files:
-    - "index.html"
+   default_files: []
 
+   # a list of proxy server ip addresses to trust (Does nothing inside a docker container) 
    downstream_servers: []
 
    headers:
@@ -79,23 +77,27 @@ virtual_hosts:
      Strict-Transport-Security: "max-age=4800; includeSubDomains; preload"
      Server: "GFY/0.0.1"
 
+  #controls the CORS system. Only enable if we need to serve CORS requests
    cors:
      enabled: false
      deny_cors_connections: false
      allowed_authority: []
 
+  # caches a list of files to be server for error conditions
    error_files:
     - code: 404
       path: "root/404.html"
 
+   # control's http caching headers for served files
+   cache_default_sec: 864000
    file_http_max_age: 
-     ".html": 864000
+     ".html": 600
      ".css": 864000
      ".js": 864000
 
 plugins:
   enabled: true
-  hot_reload: true
+  hot_reload: false
   path: "plugins"
   assets: "plugins/assets"
   config_dir: "config"

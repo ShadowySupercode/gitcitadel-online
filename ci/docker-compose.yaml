@@ -7,9 +7,9 @@ services:
     build:        #builds in the current directory
       context: .
 
-    image: gitcitadel/gitcitadel-online
+    image: gitcitadel/gc-online
     container_name: gc-online
     restart: unless-stopped
     ports:
-      - 8080:80
-    command: [ "--verbose", "--inline-scheduler" ]
+      - "8080:8080"
+    command: [ "--inline-scheduler" ]

@@ -36,7 +36,9 @@ tasks:
      #remove runtime-shared libs before they are copied
     - task: prune-plugin-libs
 
-    #include files in the build directory
+    #clean and copy to output dir
+    - cmd: '{{ ._RMR }} {{ .OUT_DIR }}'
+      ignore_error: true
     - cmd: '{{ ._CPR }} build {{ .OUT_DIR }}/'
 
   include-files:
@@ -63,8 +65,7 @@ tasks:
     - cmd: '{{ ._CPR }} "../frontend/build/" "{{ .BUILD_DIR }}/root"'
 
   postbuild_success:
-    cmds:
-    - cmd: powershell -Command "mkdir bin -Force"
+    cmds: []
 
   prune-plugin-libs:
     internal: true

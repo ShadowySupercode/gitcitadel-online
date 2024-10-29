@@ -22,6 +22,7 @@ tasks:
     cmds:
       #build rpmalloc library and rewrite to a standard .dll extension
       - cmd: task
+      - cmd: mkdir -p {{ .OUT_DIR }}
       - cmd: cp build/{{ OS }}/libvn_rpmalloc.so {{ .OUT_DIR }}/libvn_rpmalloc.so
 
   build_compress:
@@ -30,11 +31,14 @@ tasks:
     cmds:
       #build compression and rewrite to a standard .dll extension
       - cmd: task
+      - cmd: mkdir -p {{ .OUT_DIR }}
       - cmd: cp build/{{ OS }}/libvn_compress.so {{ .OUT_DIR }}/libvn_compress.so
 
   test:
     desc: 'Runs the webserver locally with preconfigured settings as in the container image'
+    interactive: true
     env:
-      VNLIB_SHARED_HEAP_FILE_PATH: lib/vnlib_rpmalloc/{{ OS }}/libvn_rpmalloc.so
+      VNLIB_SHARED_HEAP_FILE_PATH: lib/vnlib_rpmalloc/build/{{ OS }}/libvn_rpmalloc.so
+      VNLIB_COMPRESS_DLL_PATH: lib/vnlib_compress/build/{{ OS }}/libvn_compress.so
     cmds:
       - cmd: dotnet webserver/VNLib.Webserver.dll --config config/config.yaml {{ .CLI_ARGS }}

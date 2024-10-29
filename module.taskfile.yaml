@@ -3,10 +3,10 @@
 #Called by the vnbuild system to produce builds for my website
 #https://www.vaughnnugent.com/resources/software
 
-#This taskfile performs the build operations for a module, it handles
-#git code updates, msbuild on solutions, and sleet NuGet feed pushes.
+# This taskfile performs module-wide build operations, invoked buy vnbuild
+# https://www.vaughnnugent.com/resources/software/modules/vnbuild
 
-#this file must be in the same directory as the solution file
+#this file must be in the git root directory
 
 version: '3'
 
@@ -38,13 +38,15 @@ tasks:
   publish:
     cmds:
      #git archive in the module directory
-     - git archive --format {{ .ARCHIVE_FILE_FORMAT }} --output {{ .ARCHIVE_FILE_NAME }} HEAD
+     - cmd: git archive --format {{ .ARCHIVE_FILE_FORMAT }} --output {{ .ARCHIVE_FILE_NAME }} HEAD
+     - cmd: cd out/ && tar -czf ../gc-online.tgz .
 
   #called by build pipeline to clean module
   clean:
+    ignore_error: true
     cmds:
      #clean solution
      - cmd: '{{ if eq OS "windows" }}powershell rm -Force -Recurse{{else}}rm -rf{{end}} out/' 
-       ignore_error: true
+     - cmd: '{{ if eq OS "windows" }}powershell rm -Force -Recurse{{else}}rm -rf{{end}} frontend/build/' 
 
 
