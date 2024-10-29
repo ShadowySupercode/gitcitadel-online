@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-  <title>GitWorkshop: Concept</title>
+  <title>GitCitadel: Concept</title>
 </svelte:head>
 
 <Container>

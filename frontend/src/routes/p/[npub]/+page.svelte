@@ -29,7 +29,7 @@
 </script>
 
 <svelte:head>
-  <title>GitWorkshop</title>
+  <title>GitCitadel</title>
 </svelte:head>
 
 {#if error}
