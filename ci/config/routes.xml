@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<routes>
+  
+  <!-- serves the 404.html as the homepage for all http://*/ -->
+  <route routine="4" privilege="0">
+    <hostname>*</hostname>
+    <path>/</path>
+    <alternate>404.html</alternate>
+  </route>
+
+  <!-- Allow all /_app/* requests to pass through to the filesystem -->
+  <route routine="1" privilege="0">
+    <hostname>*</hostname>
+    <path>/_app/*</path>
+  </route>
+
+   <!-- Allow all /iconds/* requests to pass through to the filesystem -->
+  <route routine="1" privilege="0">
+    <hostname>*</hostname>
+    <path>/icons/*</path>
+  </route>
+
+  <!-- Allow favicon to pass through to the filesystem -->
+  <route routine="1" privilege="0">
+    <hostname>*</hostname>
+    <path>/favicon.png</path>
+  </route>
+  
+  <!-- (CATCH ALL) Serves the home page for all other routes-->
+  <route routine="4" privilege="0">
+    <hostname>*</hostname>
+    <path>/*</path>
+    <alternate>404.html</alternate>
+  </route>
+
+</routes>
