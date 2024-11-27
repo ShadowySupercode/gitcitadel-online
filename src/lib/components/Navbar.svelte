@@ -18,7 +18,7 @@
       </div>
       <div class="navbar-center">
         <a class="align-middle text-lg" href="/">
-          <img src="./icons/icon-32x32.png" alt="GC icon">
+          GitCitadel
         </a>
       </div>
       <div class="navbar-end gap-4">
